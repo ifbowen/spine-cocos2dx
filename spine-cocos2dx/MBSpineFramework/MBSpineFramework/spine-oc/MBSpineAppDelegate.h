@@ -22,9 +22,7 @@ public:
     virtual void applicationDidEnterBackground();
     virtual void applicationWillEnterForeground();
     
-    std::string animationBundlePath;
-    std::string animationName;
-    MBPlayerCompletionHandler completionHandler;
+    MBSpineLayerInitFinishHandler initFinishHandler;
     
 };
 

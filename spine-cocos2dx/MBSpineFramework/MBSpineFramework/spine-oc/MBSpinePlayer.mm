@@ -46,6 +46,17 @@ static MBSpineAppDelegate s_sharedApplication;
     self.bundlePath = bundlePath;
 }
 
+- (void)setupSpineLayer:(MBSpineLayer *)spineLayer
+{
+    spineLayer->animationBundlePath = std::string([self.bundlePath UTF8String]);
+    spineLayer->animationName = std::string([self.spineName UTF8String]);
+    spineLayer->completionHandler = [self] (void) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidComplete)]) {
+            [self.delegate animationDidComplete];
+        }
+    };
+}
+
 - (void)startAnimation
 {
     if (self.isStart) {
@@ -76,17 +87,14 @@ static MBSpineAppDelegate s_sharedApplication;
     app->initGLContextAttrs();
     
     MBSpineAppDelegate *delegate = (MBSpineAppDelegate *)app;
-    delegate->animationBundlePath = std::string([self.bundlePath UTF8String]);
-    delegate->animationName = std::string([self.spineName UTF8String]);
-    delegate->completionHandler = [self] (void) {
-        [self clear];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidComplete)]) {
-            [self.delegate animationDidComplete];
-        }
+    
+    __weak typeof(self) weakSelf = self;
+    delegate->initFinishHandler = [weakSelf] (MBSpineLayer* spineLayer) {
+        [weakSelf setupSpineLayer:spineLayer];
     };
     
     CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [UIScreen mainScreen].bounds
-                                         pixelFormat:kEAGLColorFormatRGBA8
+                                         pixelFormat: kEAGLColorFormatRGBA8
                                          depthFormat: cocos2d::GLViewImpl::_depthFormat
                                   preserveBackbuffer: NO
                                           sharegroup: nil
@@ -110,12 +118,18 @@ static MBSpineAppDelegate s_sharedApplication;
 {
     cocos2d::Director::getInstance()->stopAnimation();
     cocos2d::Director::getInstance()->end();
+    [self clear];
 }
 
 - (void)clear
 {
     self.bundlePath = nil;
     self.contentView = nil;
+}
+
+- (void)dealloc
+{
+    printf("dealloc MBSpinePlayer\n");
 }
 
 @end

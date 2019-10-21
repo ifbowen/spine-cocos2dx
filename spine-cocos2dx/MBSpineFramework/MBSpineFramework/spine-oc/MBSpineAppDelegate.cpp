@@ -43,12 +43,8 @@ bool MBSpineAppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
 #endif
     
-    vector<string> searchPath;
-    searchPath.push_back("common");
-    FileUtils::getInstance()->setSearchPaths(searchPath);
-    
-    Scene* scene = MBSpineLayer::scene(animationBundlePath, animationName, completionHandler);
-    director->runWithScene(TransitionFade::create(0.02, scene));
+    Scene* scene = MBSpineLayer::scene(initFinishHandler);
+    director->runWithScene(TransitionFade::create(0.05, scene));
     
     return true;
 }
