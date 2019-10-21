@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A494DE8235B370B001338AB /* MBSpineFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A494DE6235B370B001338AB /* MBSpineFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A496217235B4FB6001338AB /* SkeletonBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A49620B235B4FB6001338AB /* SkeletonBatch.cpp */; };
+		4A496218235B4FB6001338AB /* spine-cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49620C235B4FB6001338AB /* spine-cocos2dx.h */; };
+		4A496219235B4FB6001338AB /* spine-cocos2dx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A49620D235B4FB6001338AB /* spine-cocos2dx.cpp */; };
+		4A49621A235B4FB6001338AB /* AttachmentVertices.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49620E235B4FB6001338AB /* AttachmentVertices.h */; };
+		4A49621B235B4FB6001338AB /* SkeletonBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49620F235B4FB6001338AB /* SkeletonBatch.h */; };
+		4A49621C235B4FB6001338AB /* AttachmentVertices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496210235B4FB6001338AB /* AttachmentVertices.cpp */; };
+		4A49621D235B4FB6001338AB /* SkeletonRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496211235B4FB6001338AB /* SkeletonRenderer.cpp */; };
+		4A49621E235B4FB6001338AB /* SkeletonRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496212235B4FB6001338AB /* SkeletonRenderer.h */; };
+		4A49621F235B4FB6001338AB /* SkeletonTwoColorBatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496213235B4FB6001338AB /* SkeletonTwoColorBatch.h */; };
+		4A496220235B4FB6001338AB /* SkeletonAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496214235B4FB6001338AB /* SkeletonAnimation.h */; };
+		4A496221235B4FB6001338AB /* SkeletonAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496215235B4FB6001338AB /* SkeletonAnimation.cpp */; };
+		4A496222235B4FB6001338AB /* SkeletonTwoColorBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496216235B4FB6001338AB /* SkeletonTwoColorBatch.cpp */; };
+		4A4962DB235B4FEE001338AB /* Skin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A49629E235B4FE9001338AB /* Skin.cpp */; };
+		4A4962DC235B4FEE001338AB /* TransformConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A49629F235B4FE9001338AB /* TransformConstraint.cpp */; };
+		4A4962DD235B4FEE001338AB /* AnimationState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A0235B4FE9001338AB /* AnimationState.cpp */; };
+		4A4962DE235B4FEE001338AB /* DrawOrderTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A1235B4FE9001338AB /* DrawOrderTimeline.cpp */; };
+		4A4962DF235B4FEE001338AB /* IkConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A2235B4FE9001338AB /* IkConstraint.cpp */; };
+		4A4962E0235B4FEE001338AB /* AttachmentTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A3235B4FE9001338AB /* AttachmentTimeline.cpp */; };
+		4A4962E1235B4FEE001338AB /* DeformTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A4235B4FE9001338AB /* DeformTimeline.cpp */; };
+		4A4962E2235B4FEE001338AB /* VertexEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A5235B4FE9001338AB /* VertexEffect.cpp */; };
+		4A4962E3235B4FEE001338AB /* PathConstraintMixTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A6235B4FE9001338AB /* PathConstraintMixTimeline.cpp */; };
+		4A4962E4235B4FEE001338AB /* AttachmentLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A7235B4FEA001338AB /* AttachmentLoader.cpp */; };
+		4A4962E5235B4FEE001338AB /* TranslateTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A8235B4FEA001338AB /* TranslateTimeline.cpp */; };
+		4A4962E6235B4FEE001338AB /* PathConstraintSpacingTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962A9235B4FEA001338AB /* PathConstraintSpacingTimeline.cpp */; };
+		4A4962E7235B4FEE001338AB /* SkeletonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AA235B4FEA001338AB /* SkeletonData.cpp */; };
+		4A4962E8235B4FEE001338AB /* Constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AB235B4FEA001338AB /* Constraint.cpp */; };
+		4A4962E9235B4FEE001338AB /* PathAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AC235B4FEA001338AB /* PathAttachment.cpp */; };
+		4A4962EA235B4FEE001338AB /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AD235B4FEA001338AB /* TextureLoader.cpp */; };
+		4A4962EB235B4FEE001338AB /* TransformConstraintTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AE235B4FEA001338AB /* TransformConstraintTimeline.cpp */; };
+		4A4962EC235B4FEE001338AB /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962AF235B4FEA001338AB /* Animation.cpp */; };
+		4A4962ED235B4FEE001338AB /* AtlasAttachmentLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B0235B4FEA001338AB /* AtlasAttachmentLoader.cpp */; };
+		4A4962EE235B4FEE001338AB /* Event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B1235B4FEA001338AB /* Event.cpp */; };
+		4A4962EF235B4FEE001338AB /* Slot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B2235B4FEA001338AB /* Slot.cpp */; };
+		4A4962F0235B4FEE001338AB /* RotateTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B3235B4FEA001338AB /* RotateTimeline.cpp */; };
+		4A4962F1235B4FEE001338AB /* PointAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B4235B4FEA001338AB /* PointAttachment.cpp */; };
+		4A4962F2235B4FEE001338AB /* EventData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B5235B4FEA001338AB /* EventData.cpp */; };
+		4A4962F3235B4FEE001338AB /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B6235B4FEB001338AB /* Bone.cpp */; };
+		4A4962F4235B4FEE001338AB /* ScaleTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B7235B4FEB001338AB /* ScaleTimeline.cpp */; };
+		4A4962F5235B4FEE001338AB /* Triangulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B8235B4FEB001338AB /* Triangulator.cpp */; };
+		4A4962F6235B4FEE001338AB /* PathConstraintPositionTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962B9235B4FEB001338AB /* PathConstraintPositionTimeline.cpp */; };
+		4A4962F7235B4FEE001338AB /* Timeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BA235B4FEB001338AB /* Timeline.cpp */; };
+		4A4962F8235B4FEE001338AB /* SkeletonBounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BB235B4FEB001338AB /* SkeletonBounds.cpp */; };
+		4A4962F9235B4FEE001338AB /* BoneData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BC235B4FEB001338AB /* BoneData.cpp */; };
+		4A4962FA235B4FEE001338AB /* LinkedMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BD235B4FEB001338AB /* LinkedMesh.cpp */; };
+		4A4962FB235B4FEE001338AB /* PathConstraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BE235B4FEB001338AB /* PathConstraint.cpp */; };
+		4A4962FC235B4FEE001338AB /* Attachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962BF235B4FEB001338AB /* Attachment.cpp */; };
+		4A4962FD235B4FEE001338AB /* BoundingBoxAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C0235B4FEB001338AB /* BoundingBoxAttachment.cpp */; };
+		4A4962FE235B4FEE001338AB /* TwoColorTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C1235B4FEC001338AB /* TwoColorTimeline.cpp */; };
+		4A4962FF235B4FEE001338AB /* AnimationStateData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C2235B4FEC001338AB /* AnimationStateData.cpp */; };
+		4A496300235B4FEE001338AB /* ColorTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C3235B4FEC001338AB /* ColorTimeline.cpp */; };
+		4A496301235B4FEE001338AB /* MathUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C4235B4FEC001338AB /* MathUtil.cpp */; };
+		4A496302235B4FEE001338AB /* EventTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C5235B4FEC001338AB /* EventTimeline.cpp */; };
+		4A496303235B4FEE001338AB /* Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C6235B4FEC001338AB /* Json.cpp */; };
+		4A496304235B4FEE001338AB /* ShearTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C7235B4FEC001338AB /* ShearTimeline.cpp */; };
+		4A496305235B4FEE001338AB /* IkConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C8235B4FEC001338AB /* IkConstraintData.cpp */; };
+		4A496306235B4FEE001338AB /* SkeletonBinary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962C9235B4FEC001338AB /* SkeletonBinary.cpp */; };
+		4A496307235B4FEE001338AB /* Updatable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CA235B4FEC001338AB /* Updatable.cpp */; };
+		4A496308235B4FEE001338AB /* RTTI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CB235B4FEC001338AB /* RTTI.cpp */; };
+		4A496309235B4FEE001338AB /* TransformConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CC235B4FEC001338AB /* TransformConstraintData.cpp */; };
+		4A49630A235B4FEE001338AB /* IkConstraintTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CD235B4FEC001338AB /* IkConstraintTimeline.cpp */; };
+		4A49630B235B4FEE001338AB /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CE235B4FED001338AB /* Skeleton.cpp */; };
+		4A49630C235B4FEE001338AB /* ClippingAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962CF235B4FED001338AB /* ClippingAttachment.cpp */; };
+		4A49630D235B4FEE001338AB /* SkeletonClipping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D0235B4FED001338AB /* SkeletonClipping.cpp */; };
+		4A49630E235B4FEE001338AB /* SlotData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D1235B4FED001338AB /* SlotData.cpp */; };
+		4A49630F235B4FEE001338AB /* VertexAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D2235B4FED001338AB /* VertexAttachment.cpp */; };
+		4A496310235B4FEE001338AB /* SkeletonJson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D3235B4FED001338AB /* SkeletonJson.cpp */; };
+		4A496311235B4FEE001338AB /* MeshAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D4235B4FED001338AB /* MeshAttachment.cpp */; };
+		4A496312235B4FEE001338AB /* RegionAttachment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D5235B4FED001338AB /* RegionAttachment.cpp */; };
+		4A496313235B4FEE001338AB /* SpineObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D6235B4FED001338AB /* SpineObject.cpp */; };
+		4A496314235B4FEE001338AB /* Atlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D7235B4FED001338AB /* Atlas.cpp */; };
+		4A496315235B4FEE001338AB /* PathConstraintData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D8235B4FED001338AB /* PathConstraintData.cpp */; };
+		4A496316235B4FEE001338AB /* CurveTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962D9235B4FED001338AB /* CurveTimeline.cpp */; };
+		4A496317235B4FEE001338AB /* Extension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A4962DA235B4FEE001338AB /* Extension.cpp */; };
+		4A49631B235B519F001338AB /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496319235B5185001338AB /* libcocos2d iOS.a */; };
+		4A49631D235B51AB001338AB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A49631C235B51AB001338AB /* OpenGLES.framework */; };
+		4A49631F235B51B4001338AB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A49631E235B51B3001338AB /* QuartzCore.framework */; };
+		4A496321235B51BC001338AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496320235B51BC001338AB /* CoreGraphics.framework */; };
+		4A496323235B51C4001338AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496322235B51C4001338AB /* UIKit.framework */; };
+		4A496325235B51CC001338AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496324235B51CC001338AB /* Foundation.framework */; };
+		4A496327235B51D6001338AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496326235B51D6001338AB /* AudioToolbox.framework */; };
+		4A496329235B51E1001338AB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A496328235B51E1001338AB /* CoreMotion.framework */; };
+		4A49632B235B51ED001338AB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A49632A235B51ED001338AB /* CoreText.framework */; };
+		4A49632D235B51F5001338AB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A49632C235B51F5001338AB /* libz.tbd */; };
+		4A49632F235B5202001338AB /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A49632E235B5202001338AB /* libiconv.tbd */; };
+		4A496337235B5367001338AB /* MBSpinePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496330235B5366001338AB /* MBSpinePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A496338235B5367001338AB /* MBSpineAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496331235B5367001338AB /* MBSpineAppDelegate.h */; };
+		4A496339235B5367001338AB /* MBSpineAppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */; };
+		4A49633A235B5367001338AB /* MBSpineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496333235B5367001338AB /* MBSpineLayer.h */; };
+		4A49633B235B5367001338AB /* MBSpineLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496334235B5367001338AB /* MBSpineLayer.cpp */; };
+		4A49633C235B5367001338AB /* MBSpineFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496335235B5367001338AB /* MBSpineFramework.h */; };
+		4A49633D235B5367001338AB /* MBSpinePlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A496336235B5367001338AB /* MBSpinePlayer.mm */; };
+		4A49633F235B53B0001338AB /* MBSpineMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49633E235B53B0001338AB /* MBSpineMacros.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A496367235B5A91001338AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A49600D235B3C16001338AB /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A07A4D641783777C0073F6A7;
+			remoteInfo = "libcocos2d iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A494DE3235B370B001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBSpineFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A494DE6235B370B001338AB /* MBSpineFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpineFramework.h; sourceTree = "<group>"; };
+		4A494DE7235B370B001338AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A49600D235B3C16001338AB /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "../cocos2d-x-3.17.2/build/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
+		4A49620B235B4FB6001338AB /* SkeletonBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonBatch.cpp; path = spine/SkeletonBatch.cpp; sourceTree = "<group>"; };
+		4A49620C235B4FB6001338AB /* spine-cocos2dx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "spine-cocos2dx.h"; path = "spine/spine-cocos2dx.h"; sourceTree = "<group>"; };
+		4A49620D235B4FB6001338AB /* spine-cocos2dx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spine-cocos2dx.cpp"; path = "spine/spine-cocos2dx.cpp"; sourceTree = "<group>"; };
+		4A49620E235B4FB6001338AB /* AttachmentVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AttachmentVertices.h; path = spine/AttachmentVertices.h; sourceTree = "<group>"; };
+		4A49620F235B4FB6001338AB /* SkeletonBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonBatch.h; path = spine/SkeletonBatch.h; sourceTree = "<group>"; };
+		4A496210235B4FB6001338AB /* AttachmentVertices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttachmentVertices.cpp; path = spine/AttachmentVertices.cpp; sourceTree = "<group>"; };
+		4A496211235B4FB6001338AB /* SkeletonRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonRenderer.cpp; path = spine/SkeletonRenderer.cpp; sourceTree = "<group>"; };
+		4A496212235B4FB6001338AB /* SkeletonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonRenderer.h; path = spine/SkeletonRenderer.h; sourceTree = "<group>"; };
+		4A496213235B4FB6001338AB /* SkeletonTwoColorBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonTwoColorBatch.h; path = spine/SkeletonTwoColorBatch.h; sourceTree = "<group>"; };
+		4A496214235B4FB6001338AB /* SkeletonAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonAnimation.h; path = spine/SkeletonAnimation.h; sourceTree = "<group>"; };
+		4A496215235B4FB6001338AB /* SkeletonAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonAnimation.cpp; path = spine/SkeletonAnimation.cpp; sourceTree = "<group>"; };
+		4A496216235B4FB6001338AB /* SkeletonTwoColorBatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonTwoColorBatch.cpp; path = spine/SkeletonTwoColorBatch.cpp; sourceTree = "<group>"; };
+		4A49629E235B4FE9001338AB /* Skin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skin.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Skin.cpp"; sourceTree = SOURCE_ROOT; };
+		4A49629F235B4FE9001338AB /* TransformConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransformConstraint.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TransformConstraint.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A0235B4FE9001338AB /* AnimationState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationState.cpp; path = "MBSpineFramework/spine-cpp/src/spine/AnimationState.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A1235B4FE9001338AB /* DrawOrderTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DrawOrderTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/DrawOrderTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A2235B4FE9001338AB /* IkConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IkConstraint.cpp; path = "MBSpineFramework/spine-cpp/src/spine/IkConstraint.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A3235B4FE9001338AB /* AttachmentTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttachmentTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/AttachmentTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A4235B4FE9001338AB /* DeformTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DeformTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/DeformTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A5235B4FE9001338AB /* VertexEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexEffect.cpp; path = "MBSpineFramework/spine-cpp/src/spine/VertexEffect.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A6235B4FE9001338AB /* PathConstraintMixTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathConstraintMixTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathConstraintMixTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A7235B4FEA001338AB /* AttachmentLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttachmentLoader.cpp; path = "MBSpineFramework/spine-cpp/src/spine/AttachmentLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A8235B4FEA001338AB /* TranslateTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TranslateTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TranslateTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962A9235B4FEA001338AB /* PathConstraintSpacingTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathConstraintSpacingTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathConstraintSpacingTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AA235B4FEA001338AB /* SkeletonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SkeletonData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AB235B4FEA001338AB /* Constraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Constraint.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Constraint.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AC235B4FEA001338AB /* PathAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AD235B4FEA001338AB /* TextureLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureLoader.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TextureLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AE235B4FEA001338AB /* TransformConstraintTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransformConstraintTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TransformConstraintTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962AF235B4FEA001338AB /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Animation.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Animation.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B0235B4FEA001338AB /* AtlasAttachmentLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AtlasAttachmentLoader.cpp; path = "MBSpineFramework/spine-cpp/src/spine/AtlasAttachmentLoader.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B1235B4FEA001338AB /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Event.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Event.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B2235B4FEA001338AB /* Slot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slot.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Slot.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B3235B4FEA001338AB /* RotateTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RotateTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/RotateTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B4235B4FEA001338AB /* PointAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PointAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PointAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B5235B4FEA001338AB /* EventData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EventData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/EventData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B6235B4FEB001338AB /* Bone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bone.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Bone.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B7235B4FEB001338AB /* ScaleTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScaleTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/ScaleTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B8235B4FEB001338AB /* Triangulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Triangulator.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Triangulator.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962B9235B4FEB001338AB /* PathConstraintPositionTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathConstraintPositionTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathConstraintPositionTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BA235B4FEB001338AB /* Timeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Timeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BB235B4FEB001338AB /* SkeletonBounds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonBounds.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SkeletonBounds.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BC235B4FEB001338AB /* BoneData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoneData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/BoneData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BD235B4FEB001338AB /* LinkedMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LinkedMesh.cpp; path = "MBSpineFramework/spine-cpp/src/spine/LinkedMesh.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BE235B4FEB001338AB /* PathConstraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathConstraint.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathConstraint.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962BF235B4FEB001338AB /* Attachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Attachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Attachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C0235B4FEB001338AB /* BoundingBoxAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BoundingBoxAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/BoundingBoxAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C1235B4FEC001338AB /* TwoColorTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TwoColorTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TwoColorTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C2235B4FEC001338AB /* AnimationStateData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AnimationStateData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/AnimationStateData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C3235B4FEC001338AB /* ColorTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColorTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/ColorTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C4235B4FEC001338AB /* MathUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MathUtil.cpp; path = "MBSpineFramework/spine-cpp/src/spine/MathUtil.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C5235B4FEC001338AB /* EventTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EventTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/EventTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C6235B4FEC001338AB /* Json.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Json.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Json.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C7235B4FEC001338AB /* ShearTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShearTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/ShearTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C8235B4FEC001338AB /* IkConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IkConstraintData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/IkConstraintData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962C9235B4FEC001338AB /* SkeletonBinary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonBinary.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SkeletonBinary.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CA235B4FEC001338AB /* Updatable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Updatable.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Updatable.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CB235B4FEC001338AB /* RTTI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RTTI.cpp; path = "MBSpineFramework/spine-cpp/src/spine/RTTI.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CC235B4FEC001338AB /* TransformConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransformConstraintData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/TransformConstraintData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CD235B4FEC001338AB /* IkConstraintTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IkConstraintTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/IkConstraintTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CE235B4FED001338AB /* Skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skeleton.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Skeleton.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962CF235B4FED001338AB /* ClippingAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClippingAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/ClippingAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D0235B4FED001338AB /* SkeletonClipping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonClipping.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SkeletonClipping.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D1235B4FED001338AB /* SlotData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SlotData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SlotData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D2235B4FED001338AB /* VertexAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/VertexAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D3235B4FED001338AB /* SkeletonJson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonJson.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SkeletonJson.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D4235B4FED001338AB /* MeshAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/MeshAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D5235B4FED001338AB /* RegionAttachment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RegionAttachment.cpp; path = "MBSpineFramework/spine-cpp/src/spine/RegionAttachment.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D6235B4FED001338AB /* SpineObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpineObject.cpp; path = "MBSpineFramework/spine-cpp/src/spine/SpineObject.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D7235B4FED001338AB /* Atlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Atlas.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Atlas.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D8235B4FED001338AB /* PathConstraintData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PathConstraintData.cpp; path = "MBSpineFramework/spine-cpp/src/spine/PathConstraintData.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962D9235B4FED001338AB /* CurveTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CurveTimeline.cpp; path = "MBSpineFramework/spine-cpp/src/spine/CurveTimeline.cpp"; sourceTree = SOURCE_ROOT; };
+		4A4962DA235B4FEE001338AB /* Extension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Extension.cpp; path = "MBSpineFramework/spine-cpp/src/spine/Extension.cpp"; sourceTree = SOURCE_ROOT; };
+		4A496319235B5185001338AB /* libcocos2d iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libcocos2d iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A49631C235B51AB001338AB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		4A49631E235B51B3001338AB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		4A496320235B51BC001338AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		4A496322235B51C4001338AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4A496324235B51CC001338AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4A496326235B51D6001338AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		4A496328235B51E1001338AB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		4A49632A235B51ED001338AB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		4A49632C235B51F5001338AB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		4A49632E235B5202001338AB /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		4A496330235B5366001338AB /* MBSpinePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpinePlayer.h; sourceTree = "<group>"; };
+		4A496331235B5367001338AB /* MBSpineAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpineAppDelegate.h; sourceTree = "<group>"; };
+		4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBSpineAppDelegate.cpp; sourceTree = "<group>"; };
+		4A496333235B5367001338AB /* MBSpineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpineLayer.h; sourceTree = "<group>"; };
+		4A496334235B5367001338AB /* MBSpineLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBSpineLayer.cpp; sourceTree = "<group>"; };
+		4A496335235B5367001338AB /* MBSpineFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpineFramework.h; sourceTree = "<group>"; };
+		4A496336235B5367001338AB /* MBSpinePlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MBSpinePlayer.mm; sourceTree = "<group>"; };
+		4A49633E235B53B0001338AB /* MBSpineMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpineMacros.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A494DE0235B370B001338AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A49632F235B5202001338AB /* libiconv.tbd in Frameworks */,
+				4A49632D235B51F5001338AB /* libz.tbd in Frameworks */,
+				4A49632B235B51ED001338AB /* CoreText.framework in Frameworks */,
+				4A496329235B51E1001338AB /* CoreMotion.framework in Frameworks */,
+				4A496327235B51D6001338AB /* AudioToolbox.framework in Frameworks */,
+				4A496325235B51CC001338AB /* Foundation.framework in Frameworks */,
+				4A496323235B51C4001338AB /* UIKit.framework in Frameworks */,
+				4A496321235B51BC001338AB /* CoreGraphics.framework in Frameworks */,
+				4A49631F235B51B4001338AB /* QuartzCore.framework in Frameworks */,
+				4A49631D235B51AB001338AB /* OpenGLES.framework in Frameworks */,
+				4A49631B235B519F001338AB /* libcocos2d iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A494DD9235B370B001338AB = {
+			isa = PBXGroup;
+			children = (
+				4A494DE5235B370B001338AB /* MBSpineFramework */,
+				4A494DE4235B370B001338AB /* Products */,
+				4A496318235B5185001338AB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A494DE4235B370B001338AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A494DE3235B370B001338AB /* MBSpineFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A494DE5235B370B001338AB /* MBSpineFramework */ = {
+			isa = PBXGroup;
+			children = (
+				4A49620A235B476E001338AB /* spine-oc */,
+				4A49618D235B471E001338AB /* spine */,
+				4A496174235B469A001338AB /* spine-cocos2dx */,
+				4A496019235B3C4D001338AB /* cocos2dx */,
+				4A494DE6235B370B001338AB /* MBSpineFramework.h */,
+				4A494DE7235B370B001338AB /* Info.plist */,
+			);
+			path = MBSpineFramework;
+			sourceTree = "<group>";
+		};
+		4A496019235B3C4D001338AB /* cocos2dx */ = {
+			isa = PBXGroup;
+			children = (
+				4A49600D235B3C16001338AB /* cocos2d_libs.xcodeproj */,
+			);
+			name = cocos2dx;
+			sourceTree = "<group>";
+		};
+		4A496174235B469A001338AB /* spine-cocos2dx */ = {
+			isa = PBXGroup;
+			children = (
+				4A496210235B4FB6001338AB /* AttachmentVertices.cpp */,
+				4A49620E235B4FB6001338AB /* AttachmentVertices.h */,
+				4A496215235B4FB6001338AB /* SkeletonAnimation.cpp */,
+				4A496214235B4FB6001338AB /* SkeletonAnimation.h */,
+				4A49620B235B4FB6001338AB /* SkeletonBatch.cpp */,
+				4A49620F235B4FB6001338AB /* SkeletonBatch.h */,
+				4A496211235B4FB6001338AB /* SkeletonRenderer.cpp */,
+				4A496212235B4FB6001338AB /* SkeletonRenderer.h */,
+				4A496216235B4FB6001338AB /* SkeletonTwoColorBatch.cpp */,
+				4A496213235B4FB6001338AB /* SkeletonTwoColorBatch.h */,
+				4A49620D235B4FB6001338AB /* spine-cocos2dx.cpp */,
+				4A49620C235B4FB6001338AB /* spine-cocos2dx.h */,
+			);
+			path = "spine-cocos2dx";
+			sourceTree = "<group>";
+		};
+		4A49618D235B471E001338AB /* spine */ = {
+			isa = PBXGroup;
+			children = (
+				4A4962AF235B4FEA001338AB /* Animation.cpp */,
+				4A4962A0235B4FE9001338AB /* AnimationState.cpp */,
+				4A4962C2235B4FEC001338AB /* AnimationStateData.cpp */,
+				4A4962D7235B4FED001338AB /* Atlas.cpp */,
+				4A4962B0235B4FEA001338AB /* AtlasAttachmentLoader.cpp */,
+				4A4962BF235B4FEB001338AB /* Attachment.cpp */,
+				4A4962A7235B4FEA001338AB /* AttachmentLoader.cpp */,
+				4A4962A3235B4FE9001338AB /* AttachmentTimeline.cpp */,
+				4A4962B6235B4FEB001338AB /* Bone.cpp */,
+				4A4962BC235B4FEB001338AB /* BoneData.cpp */,
+				4A4962C0235B4FEB001338AB /* BoundingBoxAttachment.cpp */,
+				4A4962CF235B4FED001338AB /* ClippingAttachment.cpp */,
+				4A4962C3235B4FEC001338AB /* ColorTimeline.cpp */,
+				4A4962AB235B4FEA001338AB /* Constraint.cpp */,
+				4A4962D9235B4FED001338AB /* CurveTimeline.cpp */,
+				4A4962A4235B4FE9001338AB /* DeformTimeline.cpp */,
+				4A4962A1235B4FE9001338AB /* DrawOrderTimeline.cpp */,
+				4A4962B1235B4FEA001338AB /* Event.cpp */,
+				4A4962B5235B4FEA001338AB /* EventData.cpp */,
+				4A4962C5235B4FEC001338AB /* EventTimeline.cpp */,
+				4A4962DA235B4FEE001338AB /* Extension.cpp */,
+				4A4962A2235B4FE9001338AB /* IkConstraint.cpp */,
+				4A4962C8235B4FEC001338AB /* IkConstraintData.cpp */,
+				4A4962CD235B4FEC001338AB /* IkConstraintTimeline.cpp */,
+				4A4962C6235B4FEC001338AB /* Json.cpp */,
+				4A4962BD235B4FEB001338AB /* LinkedMesh.cpp */,
+				4A4962C4235B4FEC001338AB /* MathUtil.cpp */,
+				4A4962D4235B4FED001338AB /* MeshAttachment.cpp */,
+				4A4962AC235B4FEA001338AB /* PathAttachment.cpp */,
+				4A4962BE235B4FEB001338AB /* PathConstraint.cpp */,
+				4A4962D8235B4FED001338AB /* PathConstraintData.cpp */,
+				4A4962A6235B4FE9001338AB /* PathConstraintMixTimeline.cpp */,
+				4A4962B9235B4FEB001338AB /* PathConstraintPositionTimeline.cpp */,
+				4A4962A9235B4FEA001338AB /* PathConstraintSpacingTimeline.cpp */,
+				4A4962B4235B4FEA001338AB /* PointAttachment.cpp */,
+				4A4962D5235B4FED001338AB /* RegionAttachment.cpp */,
+				4A4962B3235B4FEA001338AB /* RotateTimeline.cpp */,
+				4A4962CB235B4FEC001338AB /* RTTI.cpp */,
+				4A4962B7235B4FEB001338AB /* ScaleTimeline.cpp */,
+				4A4962C7235B4FEC001338AB /* ShearTimeline.cpp */,
+				4A4962CE235B4FED001338AB /* Skeleton.cpp */,
+				4A4962C9235B4FEC001338AB /* SkeletonBinary.cpp */,
+				4A4962BB235B4FEB001338AB /* SkeletonBounds.cpp */,
+				4A4962D0235B4FED001338AB /* SkeletonClipping.cpp */,
+				4A4962AA235B4FEA001338AB /* SkeletonData.cpp */,
+				4A4962D3235B4FED001338AB /* SkeletonJson.cpp */,
+				4A49629E235B4FE9001338AB /* Skin.cpp */,
+				4A4962B2235B4FEA001338AB /* Slot.cpp */,
+				4A4962D1235B4FED001338AB /* SlotData.cpp */,
+				4A4962D6235B4FED001338AB /* SpineObject.cpp */,
+				4A4962AD235B4FEA001338AB /* TextureLoader.cpp */,
+				4A4962BA235B4FEB001338AB /* Timeline.cpp */,
+				4A49629F235B4FE9001338AB /* TransformConstraint.cpp */,
+				4A4962CC235B4FEC001338AB /* TransformConstraintData.cpp */,
+				4A4962AE235B4FEA001338AB /* TransformConstraintTimeline.cpp */,
+				4A4962A8235B4FEA001338AB /* TranslateTimeline.cpp */,
+				4A4962B8235B4FEB001338AB /* Triangulator.cpp */,
+				4A4962C1235B4FEC001338AB /* TwoColorTimeline.cpp */,
+				4A4962CA235B4FEC001338AB /* Updatable.cpp */,
+				4A4962D2235B4FED001338AB /* VertexAttachment.cpp */,
+				4A4962A5235B4FE9001338AB /* VertexEffect.cpp */,
+			);
+			path = spine;
+			sourceTree = "<group>";
+		};
+		4A49620A235B476E001338AB /* spine-oc */ = {
+			isa = PBXGroup;
+			children = (
+				4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */,
+				4A496331235B5367001338AB /* MBSpineAppDelegate.h */,
+				4A496335235B5367001338AB /* MBSpineFramework.h */,
+				4A496334235B5367001338AB /* MBSpineLayer.cpp */,
+				4A496333235B5367001338AB /* MBSpineLayer.h */,
+				4A49633E235B53B0001338AB /* MBSpineMacros.h */,
+				4A496330235B5366001338AB /* MBSpinePlayer.h */,
+				4A496336235B5367001338AB /* MBSpinePlayer.mm */,
+			);
+			path = "spine-oc";
+			sourceTree = "<group>";
+		};
+		4A496318235B5185001338AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A49632E235B5202001338AB /* libiconv.tbd */,
+				4A49632C235B51F5001338AB /* libz.tbd */,
+				4A49632A235B51ED001338AB /* CoreText.framework */,
+				4A496328235B51E1001338AB /* CoreMotion.framework */,
+				4A496326235B51D6001338AB /* AudioToolbox.framework */,
+				4A496324235B51CC001338AB /* Foundation.framework */,
+				4A496322235B51C4001338AB /* UIKit.framework */,
+				4A496320235B51BC001338AB /* CoreGraphics.framework */,
+				4A49631E235B51B3001338AB /* QuartzCore.framework */,
+				4A49631C235B51AB001338AB /* OpenGLES.framework */,
+				4A496319235B5185001338AB /* libcocos2d iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A496364235B5A91001338AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A496368235B5A91001338AB /* libcocos2d iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4A494DDE235B370B001338AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A496337235B5367001338AB /* MBSpinePlayer.h in Headers */,
+				4A49633C235B5367001338AB /* MBSpineFramework.h in Headers */,
+				4A49621B235B4FB6001338AB /* SkeletonBatch.h in Headers */,
+				4A49621A235B4FB6001338AB /* AttachmentVertices.h in Headers */,
+				4A49633A235B5367001338AB /* MBSpineLayer.h in Headers */,
+				4A496220235B4FB6001338AB /* SkeletonAnimation.h in Headers */,
+				4A49621E235B4FB6001338AB /* SkeletonRenderer.h in Headers */,
+				4A49621F235B4FB6001338AB /* SkeletonTwoColorBatch.h in Headers */,
+				4A49633F235B53B0001338AB /* MBSpineMacros.h in Headers */,
+				4A494DE8235B370B001338AB /* MBSpineFramework.h in Headers */,
+				4A496218235B4FB6001338AB /* spine-cocos2dx.h in Headers */,
+				4A496338235B5367001338AB /* MBSpineAppDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4A494DE2235B370B001338AB /* MBSpineFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A494DEB235B370B001338AB /* Build configuration list for PBXNativeTarget "MBSpineFramework" */;
+			buildPhases = (
+				4A494DDE235B370B001338AB /* Headers */,
+				4A494DDF235B370B001338AB /* Sources */,
+				4A494DE0235B370B001338AB /* Frameworks */,
+				4A494DE1235B370B001338AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBSpineFramework;
+			productName = MBSpineFramework;
+			productReference = 4A494DE3235B370B001338AB /* MBSpineFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A494DDA235B370B001338AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = inke;
+				TargetAttributes = {
+					4A494DE2235B370B001338AB = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 4A494DDD235B370B001338AB /* Build configuration list for PBXProject "MBSpineFramework" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A494DD9235B370B001338AB;
+			productRefGroup = 4A494DE4235B370B001338AB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4A496364235B5A91001338AB /* Products */;
+					ProjectRef = 4A49600D235B3C16001338AB /* cocos2d_libs.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4A494DE2235B370B001338AB /* MBSpineFramework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4A496368235B5A91001338AB /* libcocos2d iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d iOS.a";
+			remoteRef = 4A496367235B5A91001338AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A494DE1235B370B001338AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A494DDF235B370B001338AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A496309235B4FEE001338AB /* TransformConstraintData.cpp in Sources */,
+				4A4962EF235B4FEE001338AB /* Slot.cpp in Sources */,
+				4A4962F4235B4FEE001338AB /* ScaleTimeline.cpp in Sources */,
+				4A4962DF235B4FEE001338AB /* IkConstraint.cpp in Sources */,
+				4A496302235B4FEE001338AB /* EventTimeline.cpp in Sources */,
+				4A496221235B4FB6001338AB /* SkeletonAnimation.cpp in Sources */,
+				4A49630B235B4FEE001338AB /* Skeleton.cpp in Sources */,
+				4A4962DD235B4FEE001338AB /* AnimationState.cpp in Sources */,
+				4A4962E1235B4FEE001338AB /* DeformTimeline.cpp in Sources */,
+				4A4962E8235B4FEE001338AB /* Constraint.cpp in Sources */,
+				4A496312235B4FEE001338AB /* RegionAttachment.cpp in Sources */,
+				4A4962FB235B4FEE001338AB /* PathConstraint.cpp in Sources */,
+				4A4962FC235B4FEE001338AB /* Attachment.cpp in Sources */,
+				4A4962F2235B4FEE001338AB /* EventData.cpp in Sources */,
+				4A496317235B4FEE001338AB /* Extension.cpp in Sources */,
+				4A49630E235B4FEE001338AB /* SlotData.cpp in Sources */,
+				4A4962E3235B4FEE001338AB /* PathConstraintMixTimeline.cpp in Sources */,
+				4A49630C235B4FEE001338AB /* ClippingAttachment.cpp in Sources */,
+				4A496313235B4FEE001338AB /* SpineObject.cpp in Sources */,
+				4A4962E4235B4FEE001338AB /* AttachmentLoader.cpp in Sources */,
+				4A49630D235B4FEE001338AB /* SkeletonClipping.cpp in Sources */,
+				4A4962E0235B4FEE001338AB /* AttachmentTimeline.cpp in Sources */,
+				4A4962F9235B4FEE001338AB /* BoneData.cpp in Sources */,
+				4A4962F6235B4FEE001338AB /* PathConstraintPositionTimeline.cpp in Sources */,
+				4A4962EA235B4FEE001338AB /* TextureLoader.cpp in Sources */,
+				4A496316235B4FEE001338AB /* CurveTimeline.cpp in Sources */,
+				4A4962E7235B4FEE001338AB /* SkeletonData.cpp in Sources */,
+				4A49633B235B5367001338AB /* MBSpineLayer.cpp in Sources */,
+				4A4962E5235B4FEE001338AB /* TranslateTimeline.cpp in Sources */,
+				4A49633D235B5367001338AB /* MBSpinePlayer.mm in Sources */,
+				4A496306235B4FEE001338AB /* SkeletonBinary.cpp in Sources */,
+				4A4962DC235B4FEE001338AB /* TransformConstraint.cpp in Sources */,
+				4A4962E2235B4FEE001338AB /* VertexEffect.cpp in Sources */,
+				4A4962DE235B4FEE001338AB /* DrawOrderTimeline.cpp in Sources */,
+				4A496315235B4FEE001338AB /* PathConstraintData.cpp in Sources */,
+				4A4962EE235B4FEE001338AB /* Event.cpp in Sources */,
+				4A4962EC235B4FEE001338AB /* Animation.cpp in Sources */,
+				4A4962F0235B4FEE001338AB /* RotateTimeline.cpp in Sources */,
+				4A4962E9235B4FEE001338AB /* PathAttachment.cpp in Sources */,
+				4A496310235B4FEE001338AB /* SkeletonJson.cpp in Sources */,
+				4A4962EB235B4FEE001338AB /* TransformConstraintTimeline.cpp in Sources */,
+				4A4962FD235B4FEE001338AB /* BoundingBoxAttachment.cpp in Sources */,
+				4A496304235B4FEE001338AB /* ShearTimeline.cpp in Sources */,
+				4A49630A235B4FEE001338AB /* IkConstraintTimeline.cpp in Sources */,
+				4A496301235B4FEE001338AB /* MathUtil.cpp in Sources */,
+				4A4962F8235B4FEE001338AB /* SkeletonBounds.cpp in Sources */,
+				4A496219235B4FB6001338AB /* spine-cocos2dx.cpp in Sources */,
+				4A496303235B4FEE001338AB /* Json.cpp in Sources */,
+				4A49621D235B4FB6001338AB /* SkeletonRenderer.cpp in Sources */,
+				4A49630F235B4FEE001338AB /* VertexAttachment.cpp in Sources */,
+				4A49621C235B4FB6001338AB /* AttachmentVertices.cpp in Sources */,
+				4A4962F5235B4FEE001338AB /* Triangulator.cpp in Sources */,
+				4A496314235B4FEE001338AB /* Atlas.cpp in Sources */,
+				4A4962FA235B4FEE001338AB /* LinkedMesh.cpp in Sources */,
+				4A4962DB235B4FEE001338AB /* Skin.cpp in Sources */,
+				4A4962FF235B4FEE001338AB /* AnimationStateData.cpp in Sources */,
+				4A496307235B4FEE001338AB /* Updatable.cpp in Sources */,
+				4A4962F3235B4FEE001338AB /* Bone.cpp in Sources */,
+				4A496311235B4FEE001338AB /* MeshAttachment.cpp in Sources */,
+				4A496339235B5367001338AB /* MBSpineAppDelegate.cpp in Sources */,
+				4A496300235B4FEE001338AB /* ColorTimeline.cpp in Sources */,
+				4A4962FE235B4FEE001338AB /* TwoColorTimeline.cpp in Sources */,
+				4A496308235B4FEE001338AB /* RTTI.cpp in Sources */,
+				4A496222235B4FB6001338AB /* SkeletonTwoColorBatch.cpp in Sources */,
+				4A496305235B4FEE001338AB /* IkConstraintData.cpp in Sources */,
+				4A4962E6235B4FEE001338AB /* PathConstraintSpacingTimeline.cpp in Sources */,
+				4A4962F7235B4FEE001338AB /* Timeline.cpp in Sources */,
+				4A496217235B4FB6001338AB /* SkeletonBatch.cpp in Sources */,
+				4A4962F1235B4FEE001338AB /* PointAttachment.cpp in Sources */,
+				4A4962ED235B4FEE001338AB /* AtlasAttachmentLoader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4A494DE9235B370B001338AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A494DEA235B370B001338AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4A494DEC235B370B001338AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
+					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
+					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
+				);
+				INFOPLIST_FILE = MBSpineFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.MBSpineFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A494DED235B370B001338AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
+					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
+					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
+				);
+				INFOPLIST_FILE = MBSpineFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.MBSpineFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A494DDD235B370B001338AB /* Build configuration list for PBXProject "MBSpineFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A494DE9235B370B001338AB /* Debug */,
+				4A494DEA235B370B001338AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A494DEB235B370B001338AB /* Build configuration list for PBXNativeTarget "MBSpineFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A494DEC235B370B001338AB /* Debug */,
+				4A494DED235B370B001338AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A494DDA235B370B001338AB /* Project object */;
+}
