@@ -26,8 +26,9 @@ public:
     virtual ~MBSpineLayer();
     virtual bool init();
     
-    std::string animationBundlePath;
-    std::string animationName;
+    std::string spineName;
+    std::string spineAnimation;
+    std::string spinePath;
     MBPlayerCompletionHandler completionHandler;
     
 private:

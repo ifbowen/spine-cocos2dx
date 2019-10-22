@@ -33,8 +33,8 @@ bool MBSpineLayer::init () {
 
 void MBSpineLayer::addAnimation() {
     
-    std::string jsonPath = this->animationBundlePath + "/" + std::string(this->animationName).append(".json");
-    std::string atlasPath = this->animationBundlePath + "/" + std::string(this->animationName).append(".atlas");
+    std::string jsonPath = this->spinePath + "/" + std::string(this->spineName).append(".json");
+    std::string atlasPath = this->spinePath + "/" + std::string(this->spineName).append(".atlas");
     
     _skeletonAnimation = SkeletonAnimation::createWithJsonFile(jsonPath, atlasPath, 0.5f);
     
@@ -44,7 +44,7 @@ void MBSpineLayer::addAnimation() {
         }
        });
     
-    _skeletonAnimation->setAnimation(0, "walk", false);
+    _skeletonAnimation->setAnimation(0, this->spineAnimation, false);
     
     _skeletonAnimation->setPosition(Vec2(_contentSize.width / 2, 0));
     
@@ -52,7 +52,6 @@ void MBSpineLayer::addAnimation() {
 }
 
 void MBSpineLayer::runSpine() {
-    log("run spine");
     addAnimation();
     scheduleUpdate();
 }

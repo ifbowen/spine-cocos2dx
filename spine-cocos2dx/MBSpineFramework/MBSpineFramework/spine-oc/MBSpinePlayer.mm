@@ -15,10 +15,11 @@ static MBSpineAppDelegate s_sharedApplication;
 
 @interface MBSpinePlayer ()
 
-@property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, copy) NSString *bundlePath;
-@property (nonatomic, copy) NSString *spineName;
 @property (nonatomic, assign) BOOL isStart;
+@property (nonatomic, copy) NSString *spineName;
+@property (nonatomic, copy) NSString *spineAniamtion;
+@property (nonatomic, copy) NSString *spinePath;
+@property (nonatomic, strong) UIView *contentView;
 
 @end
 
@@ -35,21 +36,28 @@ static MBSpineAppDelegate s_sharedApplication;
     return _player;
 }
 
-- (void)setSpineDisplayView:(UIView *)glView
+- (void)dealloc
 {
-    self.contentView = glView;
+    printf("dealloc MBSpinePlayer\n");
 }
 
-- (void)setSpineName:(NSString *)name bundlePath:(NSString *)bundlePath
+- (void)setSpineDisplayView:(UIView *)contentView
+{
+    self.contentView = contentView;
+}
+
+- (void)setSpineName:(NSString *)name animation:(NSString *)animation path:(NSString *)path;
 {
     self.spineName = name;
-    self.bundlePath = bundlePath;
+    self.spineAniamtion = animation;
+    self.spinePath = path;
 }
 
 - (void)setupSpineLayer:(MBSpineLayer *)spineLayer
 {
-    spineLayer->animationBundlePath = std::string([self.bundlePath UTF8String]);
-    spineLayer->animationName = std::string([self.spineName UTF8String]);
+    spineLayer->spineName = std::string([self.spineName UTF8String]);
+    spineLayer->spineAnimation = std::string([self.spineAniamtion UTF8String]);
+    spineLayer->spinePath = std::string([self.spinePath UTF8String]);
     spineLayer->completionHandler = [self] (void) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidComplete)]) {
             [self.delegate animationDidComplete];
@@ -79,10 +87,6 @@ static MBSpineAppDelegate s_sharedApplication;
 
 - (void)_start
 {
-    if (cocos2d::Application::getInstance() == nullptr) {
-        new MBSpineAppDelegate();
-    }
-    
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     
@@ -118,18 +122,16 @@ static MBSpineAppDelegate s_sharedApplication;
 {
     cocos2d::Director::getInstance()->stopAnimation();
     cocos2d::Director::getInstance()->end();
-    [self clear];
+    
+    [self clearData];
 }
 
-- (void)clear
+- (void)clearData
 {
-    self.bundlePath = nil;
+    self.spinePath = nil;
+    self.spineName = nil;
+    self.spineAniamtion = nil;
     self.contentView = nil;
-}
-
-- (void)dealloc
-{
-    printf("dealloc MBSpinePlayer\n");
 }
 
 @end

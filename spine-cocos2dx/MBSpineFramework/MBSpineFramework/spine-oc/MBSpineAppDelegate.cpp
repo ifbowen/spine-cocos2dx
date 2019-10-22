@@ -34,6 +34,8 @@ void MBSpineAppDelegate::initGLContextAttrs() {
 
 bool MBSpineAppDelegate::applicationDidFinishLaunching() {
     
+    log("MBSpineAppDelegate didLaunching");
+
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     
@@ -44,7 +46,7 @@ bool MBSpineAppDelegate::applicationDidFinishLaunching() {
 #endif
     
     Scene* scene = MBSpineLayer::scene(initFinishHandler);
-    director->runWithScene(TransitionFade::create(0.05, scene));
+    director->runWithScene(TransitionFade::create(0.02, scene));
     
     return true;
 }

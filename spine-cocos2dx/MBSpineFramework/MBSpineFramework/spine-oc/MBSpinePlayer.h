@@ -19,13 +19,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, weak) id <MBSpinePlayerDelegate> delegate;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 + (instancetype)player;
 
 /// 设置spine动画承载视图
-- (void)setSpineDisplayView:(UIView *)glView;
+- (void)setSpineDisplayView:(UIView *)contentView;
 
-/// 设置spine动画资源名称和资源包路径
-- (void)setSpineName:(NSString *)name bundlePath:(NSString *)bundlePath;
+/// 设置动画
+/// @param name 资源名称
+/// @param animation 动画名称
+/// @param path 资源路径
+- (void)setSpineName:(NSString *)name animation:(NSString *)animation path:(NSString *)path;
 
 /// 开始
 - (void)startAnimation;
