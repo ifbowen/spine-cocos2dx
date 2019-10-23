@@ -25,7 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+    
+    UIView *white = [[UIView alloc] initWithFrame:self.view.bounds];
+    white.backgroundColor = UIColor.whiteColor;
+    [self.view addSubview:white];
+    
     self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.spineView];
     
@@ -37,8 +41,15 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    printf("MBSpinePlayerViewController viewWillDisappear\n");
     self.dissAppear = YES;
     [self.player stopAnimation];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    printf("MBSpinePlayerViewController viewDidDisappear\n");
 }
 
 - (void)runSpine

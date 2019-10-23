@@ -15,11 +15,11 @@ static MBSpineAppDelegate s_sharedApplication;
 
 @interface MBSpinePlayer ()
 
-@property (nonatomic, assign) BOOL isStart;
+@property (nonatomic, assign) BOOL isRunning;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, copy) NSString *spineName;
 @property (nonatomic, copy) NSString *spineAniamtion;
 @property (nonatomic, copy) NSString *spinePath;
-@property (nonatomic, strong) UIView *contentView;
 
 @end
 
@@ -67,24 +67,24 @@ static MBSpineAppDelegate s_sharedApplication;
 
 - (void)startAnimation
 {
-    if (self.isStart) {
+    if (self.isRunning) {
         return;
     }
     printf("MBSpinePlayer startAnimation\n");
 
-    self.isStart = YES;
+    self.isRunning = YES;
     
     [self _start];
 }
 
 - (void)stopAnimation
 {
-    if (!self.isStart) {
+    if (!self.isRunning) {
         return;
     }
     printf("MBSpinePlayer stopAnimation\n");
     
-    self.isStart = NO;
+    self.isRunning = NO;
     
     [self _stop];
 }

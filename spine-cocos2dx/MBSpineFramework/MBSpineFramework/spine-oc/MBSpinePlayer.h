@@ -15,9 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/**
+ 注意：
+ 1、视图即将消失之后不能开启动画
+ 2、contentView移除之前保证Director已经销毁
+ 3、Director销毁之后才能开启新动画
+ */
 @interface MBSpinePlayer : NSObject
 
-@property(nonatomic, weak) id <MBSpinePlayerDelegate> delegate;
+@property (nonatomic, weak) id <MBSpinePlayerDelegate> delegate;
 
 + (instancetype)player;
 
