@@ -6,25 +6,17 @@
 //
 
 #include "MBSpineAppDelegate.h"
-
-#include <vector>
-#include <string>
 #include "MBSpineMacros.h"
-#include <spine/SkeletonTwoColorBatch.h>
 
 USING_NS_CC;
 using namespace std;
-
-spine::DebugExtension debugExtension(spine::SpineExtension::getInstance());
 
 MBSpineAppDelegate::MBSpineAppDelegate() {
     
 }
 
 MBSpineAppDelegate::~MBSpineAppDelegate() {
-    spine::SkeletonBatch::destroyInstance();
-    spine::SkeletonTwoColorBatch::destroyInstance();
-    debugExtension.reportLeaks();
+    
 }
 
 void MBSpineAppDelegate::initGLContextAttrs() {
