@@ -25,6 +25,7 @@ public:
     
     virtual ~MBSpineLayer();
     virtual bool init();
+    void onExit();
     
     std::string spineName;
     std::string spineAnimation;
@@ -34,7 +35,6 @@ public:
 private:
     void runSpine();
     void addAnimation();
-    
     spine::SkeletonAnimation* _skeletonAnimation;
 
 };

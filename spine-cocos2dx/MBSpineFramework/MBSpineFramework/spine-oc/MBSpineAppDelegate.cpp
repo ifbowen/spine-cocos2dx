@@ -34,8 +34,6 @@ void MBSpineAppDelegate::initGLContextAttrs() {
 
 bool MBSpineAppDelegate::applicationDidFinishLaunching() {
     
-    log("MBSpineAppDelegate didLaunching");
-
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     

@@ -23,12 +23,16 @@ Scene* MBSpineLayer::scene (const MBSpineLayerInitFinishHandler& handler) {
 }
 
 MBSpineLayer::~MBSpineLayer () {
-    log("dealloc MBSpineLayer");
+    log("MBSpineLayer dealloc");
 }
 
 bool MBSpineLayer::init () {
     if (!LayerColor::initWithColor(Color4B(0, 0, 0, 50))) return false;
     return true;
+}
+
+void MBSpineLayer::onExit() {
+    LayerColor::onExit();
 }
 
 void MBSpineLayer::addAnimation() {
@@ -55,4 +59,3 @@ void MBSpineLayer::runSpine() {
     addAnimation();
     scheduleUpdate();
 }
-

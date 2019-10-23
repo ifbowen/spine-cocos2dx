@@ -12,6 +12,7 @@
 
 @property(nonatomic, strong) MBSpinePlayer *player;
 @property (nonatomic, strong) UIView *spineView;
+@property (nonatomic, assign) BOOL dissAppear;
 
 @end
 
@@ -36,6 +37,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    printf("viewWillDisappear\n");
+    self.dissAppear = YES;
     [self.player stopAnimation];
 }
 
@@ -52,14 +55,16 @@
     [self.player stopAnimation];
     
     __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [weakSelf runSpine];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ( weakSelf && !weakSelf.dissAppear) {
+            [weakSelf runSpine];
+        }
     });
 }
 
 - (void)dealloc
 {
-    printf("dealloc MBSpinePlayerViewController\n");
+    printf("MBSpinePlayerViewController dealloc\n");
 }
 
 

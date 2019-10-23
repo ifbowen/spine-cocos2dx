@@ -70,6 +70,8 @@ static MBSpineAppDelegate s_sharedApplication;
     if (self.isStart) {
         return;
     }
+    printf("MBSpinePlayer startAnimation\n");
+
     self.isStart = YES;
     
     [self _start];
@@ -80,6 +82,8 @@ static MBSpineAppDelegate s_sharedApplication;
     if (!self.isStart) {
         return;
     }
+    printf("MBSpinePlayer stopAnimation\n");
+    
     self.isStart = NO;
     
     [self _stop];
