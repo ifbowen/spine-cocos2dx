@@ -29,7 +29,7 @@
     self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.spineView];
     
-    self.player = [MBSpinePlayer player];
+    self.player = [[MBSpinePlayer alloc] init];
     self.player.delegate = self;
     [self runSpine];
 }
@@ -37,7 +37,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    printf("viewWillDisappear\n");
     self.dissAppear = YES;
     [self.player stopAnimation];
 }

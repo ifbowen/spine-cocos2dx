@@ -19,9 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, weak) id <MBSpinePlayerDelegate> delegate;
 
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
-
 + (instancetype)player;
 
 /// 设置spine动画承载视图

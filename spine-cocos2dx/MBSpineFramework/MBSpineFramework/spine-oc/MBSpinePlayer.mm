@@ -38,7 +38,7 @@ static MBSpineAppDelegate s_sharedApplication;
 
 - (void)dealloc
 {
-    printf("dealloc MBSpinePlayer\n");
+    printf("MBSpinePlayer dealloc\n");
 }
 
 - (void)setSpineDisplayView:(UIView *)contentView
