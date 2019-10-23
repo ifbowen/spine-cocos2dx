@@ -97,7 +97,6 @@
 		4A496339235B5367001338AB /* MBSpineAppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */; };
 		4A49633A235B5367001338AB /* MBSpineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496333235B5367001338AB /* MBSpineLayer.h */; };
 		4A49633B235B5367001338AB /* MBSpineLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A496334235B5367001338AB /* MBSpineLayer.cpp */; };
-		4A49633C235B5367001338AB /* MBSpineFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A496335235B5367001338AB /* MBSpineFramework.h */; };
 		4A49633D235B5367001338AB /* MBSpinePlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A496336235B5367001338AB /* MBSpinePlayer.mm */; };
 		4A49633F235B53B0001338AB /* MBSpineMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49633E235B53B0001338AB /* MBSpineMacros.h */; };
 /* End PBXBuildFile section */
@@ -206,7 +205,6 @@
 		4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBSpineAppDelegate.cpp; sourceTree = "<group>"; };
 		4A496333235B5367001338AB /* MBSpineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpineLayer.h; sourceTree = "<group>"; };
 		4A496334235B5367001338AB /* MBSpineLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBSpineLayer.cpp; sourceTree = "<group>"; };
-		4A496335235B5367001338AB /* MBSpineFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpineFramework.h; sourceTree = "<group>"; };
 		4A496336235B5367001338AB /* MBSpinePlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MBSpinePlayer.mm; sourceTree = "<group>"; };
 		4A49633E235B53B0001338AB /* MBSpineMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpineMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,7 +361,6 @@
 			children = (
 				4A496332235B5367001338AB /* MBSpineAppDelegate.cpp */,
 				4A496331235B5367001338AB /* MBSpineAppDelegate.h */,
-				4A496335235B5367001338AB /* MBSpineFramework.h */,
 				4A496334235B5367001338AB /* MBSpineLayer.cpp */,
 				4A496333235B5367001338AB /* MBSpineLayer.h */,
 				4A49633E235B53B0001338AB /* MBSpineMacros.h */,
@@ -407,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A496337235B5367001338AB /* MBSpinePlayer.h in Headers */,
-				4A49633C235B5367001338AB /* MBSpineFramework.h in Headers */,
 				4A49621B235B4FB6001338AB /* SkeletonBatch.h in Headers */,
 				4A49621A235B4FB6001338AB /* AttachmentVertices.h in Headers */,
 				4A49633A235B5367001338AB /* MBSpineLayer.h in Headers */,

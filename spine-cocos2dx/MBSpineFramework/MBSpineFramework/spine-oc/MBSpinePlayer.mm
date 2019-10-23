@@ -127,6 +127,9 @@ static MBSpineAppDelegate s_sharedApplication;
     cocos2d::Director::getInstance()->stopAnimation();
     cocos2d::Director::getInstance()->end();
     
+    // 清除缓存
+    cocos2d::Director::getInstance()->purgeCachedData();
+    
     [self clearData];
 }
 
