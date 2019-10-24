@@ -17,9 +17,13 @@ static MBSpineAppDelegate s_sharedApplication;
 
 @property (nonatomic, assign) BOOL isRunning;
 @property (nonatomic, strong) UIView *contentView;
+
+@property (nonatomic, copy) NSString *spineSkin;
+@property (nonatomic, copy) NSString *spinePath;
 @property (nonatomic, copy) NSString *spineName;
 @property (nonatomic, copy) NSString *spineAniamtion;
-@property (nonatomic, copy) NSString *spinePath;
+@property (nonatomic, assign) BOOL spineLoop;
+@property (nonatomic, assign) BOOL debugEable;
 
 @end
 
@@ -41,24 +45,65 @@ static MBSpineAppDelegate s_sharedApplication;
     printf("MBSpinePlayer dealloc\n");
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.spineLoop = NO;
+        self.debugEable = YES;
+    }
+    return self;
+}
+
 - (void)setSpineDisplayView:(UIView *)contentView
 {
     self.contentView = contentView;
 }
 
-- (void)setSpineName:(NSString *)name animation:(NSString *)animation path:(NSString *)path;
+- (void)setSpineName:(NSString *)name path:(NSString *)path;
 {
     self.spineName = name;
-    self.spineAniamtion = animation;
     self.spinePath = path;
+}
+
+- (void)setSpineAnimation:(NSString *)animation loop:(BOOL)isLoop
+{
+    self.spineAniamtion = animation;
+    self.spineLoop = isLoop;
+}
+
+- (void)setSpineSkinSurface:(NSString *)skin
+{
+    self.spineSkin = skin;
+}
+
+- (void)setSpineDebugEnable:(BOOL)enable
+{
+    self.debugEable = enable;
 }
 
 - (void)setupSpineLayer:(MBSpineLayer *)spineLayer
 {
+    if (!self.spineName || !self.spinePath || !self.spineAniamtion) {
+        return;
+    }
+    
+    if (self.spineSkin) {
+        spineLayer->spineSkin = std::string([self.spineSkin UTF8String]);
+    }
+    
     spineLayer->spineName = std::string([self.spineName UTF8String]);
-    spineLayer->spineAnimation = std::string([self.spineAniamtion UTF8String]);
     spineLayer->spinePath = std::string([self.spinePath UTF8String]);
-    spineLayer->completionHandler = [self] (void) {
+    spineLayer->spineAnimation = std::string([self.spineAniamtion UTF8String]);
+    spineLayer->loop = self.spineLoop;
+    spineLayer->debugEnable = self.debugEable;
+    
+    spineLayer->startHandler = [self] (void) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidStart)]) {
+            [self.delegate animationDidStart];
+        }
+    };
+    spineLayer->completeHandler = [self] (void) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidComplete)]) {
             [self.delegate animationDidComplete];
         }
@@ -119,6 +164,10 @@ static MBSpineAppDelegate s_sharedApplication;
     director->setClearColor(cocos2d::Color4F(0, 0, 0, 0));
     director->setOpenGLView(glview);
     
+    if (self.debugEable) {
+        director->setDisplayStats(true);
+    }
+    
     app->run();
 }
 
@@ -135,6 +184,7 @@ static MBSpineAppDelegate s_sharedApplication;
 
 - (void)clearData
 {
+    self.spineSkin = nil;
     self.spinePath = nil;
     self.spineName = nil;
     self.spineAniamtion = nil;

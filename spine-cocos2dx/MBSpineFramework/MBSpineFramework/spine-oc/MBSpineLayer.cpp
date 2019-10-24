@@ -45,15 +45,27 @@ void MBSpineLayer::addAnimation() {
     
     _skeletonAnimation = SkeletonAnimation::createWithJsonFile(jsonPath, atlasPath, 0.5f);
     
+    _skeletonAnimation->setStartListener([this] (TrackEntry* entry) {
+        if (this->startHandler) {
+            this->startHandler();
+        }
+    });
     _skeletonAnimation->setCompleteListener([this] (TrackEntry* entry) {
-        if (this->completionHandler) {
-            this->completionHandler();
+        if (this->completeHandler) {
+            this->completeHandler();
         }
        });
     
-    _skeletonAnimation->setAnimation(0, this->spineAnimation, false);
-    
+    _skeletonAnimation->setAnimation(0, this->spineAnimation, this->loop);
     _skeletonAnimation->setPosition(Vec2(_contentSize.width / 2, 0));
+    
+    if (!this->spineSkin.empty()) {
+        _skeletonAnimation->setSkin(this->spineSkin);
+    }
+    
+    _skeletonAnimation->setDebugBonesEnabled(this->debugEnable);
+    _skeletonAnimation->setDebugSlotsEnabled(this->debugEnable);
+    _skeletonAnimation->setDebugMeshesEnabled(this->debugEnable);
     
     addChild(_skeletonAnimation);
 }

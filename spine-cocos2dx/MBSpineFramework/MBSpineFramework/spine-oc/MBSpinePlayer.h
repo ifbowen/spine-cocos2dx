@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MBSpinePlayerDelegate <NSObject>
 
+/// 动画开始回调
+- (void)animationDidStart;
+
+/// 动画完成回调
 - (void)animationDidComplete;
 
 @end
@@ -30,11 +34,23 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设置spine动画承载视图
 - (void)setSpineDisplayView:(UIView *)contentView;
 
-/// 设置动画
+/// 设置动画资源
 /// @param name 资源名称
-/// @param animation 动画名称
 /// @param path 资源路径
-- (void)setSpineName:(NSString *)name animation:(NSString *)animation path:(NSString *)path;
+- (void)setSpineName:(NSString *)name path:(NSString *)path;
+
+/// 设置动画名称
+/// @param animation 动画名称
+/// @param isLoop 是否循环
+- (void)setSpineAnimation:(NSString *)animation loop:(BOOL)isLoop;
+
+/// 设置动画皮肤
+/// @param skin 皮肤
+- (void)setSpineSkinSurface:(NSString *)skin;
+
+/// 设置动画调试状态
+/// @param enable yes，开启；no，关闭
+- (void)setSpineDebugEnable:(BOOL)enable;
 
 /// 开始
 - (void)startAnimation;

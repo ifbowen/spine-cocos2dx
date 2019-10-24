@@ -13,6 +13,7 @@
 @property(nonatomic, strong) MBSpinePlayer *player;
 @property (nonatomic, strong) UIView *spineView;
 @property (nonatomic, assign) BOOL dissAppear;
+@property (nonatomic, assign) BOOL isLoop;
 
 @end
 
@@ -29,6 +30,8 @@
     UIView *white = [[UIView alloc] initWithFrame:self.view.bounds];
     white.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:white];
+    
+    self.isLoop = YES;
     
     self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.spineView];
@@ -56,20 +59,28 @@
 {
     [self.player setSpineDisplayView:self.spineView];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"common" ofType:nil];
-    [self.player setSpineName:@"spineboy" animation:@"walk" path:path];
+    [self.player setSpineName:@"spineboy" path:path];
+    [self.player setSpineAnimation:@"walk" loop:self.isLoop];
+    
     [self.player startAnimation];
+}
+
+- (void)animationDidStart
+{
+    
 }
 
 - (void)animationDidComplete
 {
-    [self.player stopAnimation];
-    
-    __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ( weakSelf && !weakSelf.dissAppear) {
-            [weakSelf runSpine];
-        }
-    });
+    if (!self.isLoop) {
+        [self.player stopAnimation];
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ( weakSelf && !weakSelf.dissAppear) {
+                [weakSelf runSpine];
+            }
+        });
+    }
 }
 
 - (void)dealloc

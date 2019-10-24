@@ -14,7 +14,7 @@
 
 class MBSpineLayer;
 
-typedef std::function<void()> MBPlayerCompletionHandler;
+typedef std::function<void()> MBPlayerEventHandler;
 typedef std::function<void(MBSpineLayer* spineLayer)> MBSpineLayerInitFinishHandler;
 
 class MBSpineLayer : public cocos2d::LayerColor {
@@ -27,10 +27,16 @@ public:
     virtual bool init();
     void onExit();
     
+    std::string spineSkin;
     std::string spineName;
-    std::string spineAnimation;
     std::string spinePath;
-    MBPlayerCompletionHandler completionHandler;
+    std::string spineAnimation;
+    
+    bool loop;
+    bool debugEnable;
+    
+    MBPlayerEventHandler startHandler;
+    MBPlayerEventHandler completeHandler;
     
 private:
     void runSpine();
