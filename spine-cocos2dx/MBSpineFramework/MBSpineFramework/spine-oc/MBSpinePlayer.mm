@@ -50,7 +50,7 @@ static MBSpineAppDelegate s_sharedApplication;
     self = [super init];
     if (self) {
         self.spineLoop = NO;
-        self.debugEable = YES;
+        self.debugEable = NO;
     }
     return self;
 }
