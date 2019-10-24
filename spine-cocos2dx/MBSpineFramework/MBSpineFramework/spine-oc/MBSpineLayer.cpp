@@ -6,6 +6,7 @@
 //
 
 #include "MBSpineLayer.h"
+#include <spine/SkeletonTwoColorBatch.h>
 
 USING_NS_CC;
 using namespace spine;
@@ -24,6 +25,8 @@ Scene* MBSpineLayer::scene (const MBSpineLayerInitFinishHandler& handler) {
 
 MBSpineLayer::~MBSpineLayer () {
     log("MBSpineLayer dealloc");
+    spine::SkeletonBatch::destroyInstance();
+    spine::SkeletonTwoColorBatch::destroyInstance();
 }
 
 bool MBSpineLayer::init () {

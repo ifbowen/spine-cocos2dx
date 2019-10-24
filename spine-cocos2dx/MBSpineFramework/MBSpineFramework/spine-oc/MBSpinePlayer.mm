@@ -7,7 +7,6 @@
 
 #import "MBSpinePlayer.h"
 #include "cocos2d.h"
-#include <spine/SkeletonTwoColorBatch.h>
 #include "platform/ios/CCDirectorCaller-ios.h"
 #include "platform/ios/CCEAGLView-ios.h"
 #include "MBSpineAppDelegate.h"
@@ -40,8 +39,6 @@ static MBSpineAppDelegate s_sharedApplication;
 - (void)dealloc
 {
     printf("MBSpinePlayer dealloc\n");
-    spine::SkeletonBatch::destroyInstance();
-    spine::SkeletonTwoColorBatch::destroyInstance();
 }
 
 - (void)setSpineDisplayView:(UIView *)contentView
