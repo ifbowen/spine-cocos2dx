@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include <spine/spine-cocos2dx.h>
+#include "MBSkeletonAnimation.h"
 
 class MBSpineLayer;
 
@@ -41,7 +42,7 @@ public:
 private:
     void runSpine();
     void addAnimation();
-    spine::SkeletonAnimation* _skeletonAnimation;
+    MBSkeletonAnimation* _skeletonAnimation;
 
 };
 

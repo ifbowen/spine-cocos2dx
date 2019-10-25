@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A30677E2361DD2700C94E0E /* MBSkeletonAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A30677C2361DD2700C94E0E /* MBSkeletonAnimation.h */; };
+		4A30677F2361DD2700C94E0E /* MBSkeletonAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A30677D2361DD2700C94E0E /* MBSkeletonAnimation.cpp */; };
 		4A494DE8235B370B001338AB /* MBSpineFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A494DE6235B370B001338AB /* MBSpineFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A496217235B4FB6001338AB /* SkeletonBatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A49620B235B4FB6001338AB /* SkeletonBatch.cpp */; };
 		4A496218235B4FB6001338AB /* spine-cocos2dx.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A49620C235B4FB6001338AB /* spine-cocos2dx.h */; };
@@ -112,6 +114,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A30677C2361DD2700C94E0E /* MBSkeletonAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSkeletonAnimation.h; sourceTree = "<group>"; };
+		4A30677D2361DD2700C94E0E /* MBSkeletonAnimation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MBSkeletonAnimation.cpp; sourceTree = "<group>"; };
 		4A494DE3235B370B001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBSpineFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A494DE6235B370B001338AB /* MBSpineFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpineFramework.h; sourceTree = "<group>"; };
 		4A494DE7235B370B001338AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -366,6 +370,8 @@
 				4A49633E235B53B0001338AB /* MBSpineMacros.h */,
 				4A496330235B5366001338AB /* MBSpinePlayer.h */,
 				4A496336235B5367001338AB /* MBSpinePlayer.mm */,
+				4A30677C2361DD2700C94E0E /* MBSkeletonAnimation.h */,
+				4A30677D2361DD2700C94E0E /* MBSkeletonAnimation.cpp */,
 			);
 			path = "spine-oc";
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				4A496220235B4FB6001338AB /* SkeletonAnimation.h in Headers */,
 				4A49621E235B4FB6001338AB /* SkeletonRenderer.h in Headers */,
 				4A49621F235B4FB6001338AB /* SkeletonTwoColorBatch.h in Headers */,
+				4A30677E2361DD2700C94E0E /* MBSkeletonAnimation.h in Headers */,
 				4A49633F235B53B0001338AB /* MBSpineMacros.h in Headers */,
 				4A494DE8235B370B001338AB /* MBSpineFramework.h in Headers */,
 				4A496218235B4FB6001338AB /* spine-cocos2dx.h in Headers */,
@@ -538,6 +545,7 @@
 				4A496315235B4FEE001338AB /* PathConstraintData.cpp in Sources */,
 				4A4962EE235B4FEE001338AB /* Event.cpp in Sources */,
 				4A4962EC235B4FEE001338AB /* Animation.cpp in Sources */,
+				4A30677F2361DD2700C94E0E /* MBSkeletonAnimation.cpp in Sources */,
 				4A4962F0235B4FEE001338AB /* RotateTimeline.cpp in Sources */,
 				4A4962E9235B4FEE001338AB /* PathAttachment.cpp in Sources */,
 				4A496310235B4FEE001338AB /* SkeletonJson.cpp in Sources */,
@@ -628,6 +636,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
+					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
+					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -683,6 +696,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
+					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
+					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -704,12 +722,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
-					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
-					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MBSpineFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -735,12 +748,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/MBSpineFramework/spine-cocos2dx",
-					"$(SRCROOT)/MBSpineFramework/spine-cpp/include",
-					"$(SRCROOT)/cocos2d-x-3.17.2/cocos",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MBSpineFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
