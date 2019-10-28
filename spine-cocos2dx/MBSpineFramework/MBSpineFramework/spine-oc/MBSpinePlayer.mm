@@ -11,8 +11,6 @@
 #include "platform/ios/CCEAGLView-ios.h"
 #include "MBSpineAppDelegate.h"
 
-static MBSpineAppDelegate s_sharedApplication;
-
 @interface MBSpinePlayer ()
 
 @property (nonatomic, assign) BOOL isRunning;
@@ -151,6 +149,8 @@ static MBSpineAppDelegate s_sharedApplication;
 
 - (void)_start
 {
+    static MBSpineAppDelegate s_sharedApplication;
+
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     
