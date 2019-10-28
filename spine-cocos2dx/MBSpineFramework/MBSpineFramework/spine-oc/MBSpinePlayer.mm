@@ -22,6 +22,7 @@ static MBSpineAppDelegate s_sharedApplication;
 @property (nonatomic, copy) NSString *spinePath;
 @property (nonatomic, copy) NSString *spineName;
 @property (nonatomic, copy) NSString *spineAniamtion;
+@property (nonatomic, strong) NSMutableArray *skins;
 @property (nonatomic, assign) BOOL spineLoop;
 @property (nonatomic, assign) BOOL debugEable;
 
@@ -51,6 +52,7 @@ static MBSpineAppDelegate s_sharedApplication;
     if (self) {
         self.spineLoop = NO;
         self.debugEable = NO;
+        self.skins = @[].mutableCopy;
     }
     return self;
 }
@@ -70,6 +72,15 @@ static MBSpineAppDelegate s_sharedApplication;
 {
     self.spineAniamtion = animation;
     self.spineLoop = isLoop;
+}
+
+- (void)setSpineLocalSkin:(NSString *)name file:(NSString *)file
+{
+    if (!name || !file) {
+        return;
+    }
+    NSDictionary *skin = @{@"name": name, @"file": file};
+    [self.skins addObject:skin];
 }
 
 - (void)setSpineSkinSurface:(NSString *)skin
@@ -97,6 +108,10 @@ static MBSpineAppDelegate s_sharedApplication;
     spineLayer->spineAnimation = std::string([self.spineAniamtion UTF8String]);
     spineLayer->loop = self.spineLoop;
     spineLayer->debugEnable = self.debugEable;
+    
+    for (NSDictionary *skin in self.skins) {
+        spineLayer->setSkinFile(std::string([skin[@"name"] UTF8String]), std::string([skin[@"file"] UTF8String]));
+    }
     
     spineLayer->startHandler = [self] (void) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidStart)]) {
@@ -189,6 +204,7 @@ static MBSpineAppDelegate s_sharedApplication;
     self.spineName = nil;
     self.spineAniamtion = nil;
     self.contentView = nil;
+    [self.skins removeAllObjects];
 }
 
 @end

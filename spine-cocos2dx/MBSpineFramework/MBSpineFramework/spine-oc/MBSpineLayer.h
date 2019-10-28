@@ -28,6 +28,8 @@ public:
     virtual bool init();
     void onExit();
     
+    void setSkinFile(std::string slotName, std::string file);
+    
     std::string spineSkin;
     std::string spineName;
     std::string spinePath;
@@ -43,6 +45,7 @@ private:
     void runSpine();
     void addAnimation();
     MBSkeletonAnimation* _skeletonAnimation;
+    cocos2d::Map<std::string, cocos2d::Texture2D*> skinMap;
 
 };
 

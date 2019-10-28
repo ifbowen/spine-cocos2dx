@@ -27,7 +27,6 @@ MBSkeletonAnimation* MBSkeletonAnimation::createWithJsonFile (const std::string&
     return node;
 }
 
-
 void MBSkeletonAnimation::draw (Renderer* renderer, const Mat4& transform, uint32_t transformFlags) {
     SkeletonBatch* batch = SkeletonBatch::getInstance();
     SkeletonTwoColorBatch* twoColorBatch = SkeletonTwoColorBatch::getInstance();
@@ -78,6 +77,8 @@ void MBSkeletonAnimation::draw (Renderer* renderer, const Mat4& transform, uint3
             _clipper->clipEnd(*slot);
             continue;
         }
+        
+        replaceSkinImage(slot);
         
         cocos2d::TrianglesCommand::Triangles triangles;
         TwoColorTriangles trianglesTwoColor;
@@ -202,9 +203,7 @@ void MBSkeletonAnimation::draw (Renderer* renderer, const Mat4& transform, uint3
                 blendFunc.src = _premultipliedAlpha ? GL_ONE : GL_SRC_ALPHA;
                 blendFunc.dst = GL_ONE_MINUS_SRC_ALPHA;
         }
-        
-        replaceSkinImage(renderer, transform, transformFlags, blendFunc, slot);
-                
+                        
         if (!isTwoColorTint) {
             if (_clipper->isClipping()) {
                 _clipper->clipTriangles((float*)&triangles.verts[0].vertices, triangles.indices, triangles.indexCount, (float*)&triangles.verts[0].texCoords, sizeof(cocos2d::V3F_C4B_T2F) / 4);
@@ -450,8 +449,12 @@ void MBSkeletonAnimation::draw (Renderer* renderer, const Mat4& transform, uint3
     }
 }
 
-
-void MBSkeletonAnimation::replaceSkinImage (Renderer* renderer, const Mat4& transform, uint32_t transformFlags, BlendFunc blendFunc, Slot *slot) {
+/*
+ 目前实现了二种绘制
+ REGION:是一个矩形图片的渲染，所以直接用类中mUsv来设置uvs
+ MESH:usv需要计算一下，大概就是计算一下 x = (x-minx)/(maxx-minx), y = (y-miny)/(maxy-miny)
+ */
+void MBSkeletonAnimation::replaceSkinImage(Slot *slot) {
     
     bool isFind = false;
     std::string slotName = slot->getData().getName().buffer();
@@ -460,15 +463,65 @@ void MBSkeletonAnimation::replaceSkinImage (Renderer* renderer, const Mat4& tran
     }
     if (isFind) {
         
-        AttachmentVertices* attachmentVertices = nullptr;
-        RegionAttachment* attachment = (RegionAttachment*)slot->getAttachment();
-        attachmentVertices = (AttachmentVertices*)attachment->getRendererObject();
+        if (slot->getAttachment()->getRTTI().isExactly(RegionAttachment::rtti)) {
+            RegionAttachment* attachment = (RegionAttachment*)slot->getAttachment();
+            AttachmentVertices* attachmentVertices = (AttachmentVertices*)attachment->getRendererObject();
+            
+            if (attachment->getColor().a == 0) {
+                _clipper->clipEnd(*slot);
+                return;
+            }
+            
+            Texture2D *texture = skinMap.at(slotName);
+            attachmentVertices->_texture = texture;
+            TrianglesCommand::Triangles* triangles = attachmentVertices->_triangles;
+            
+            triangles->verts[0].texCoords.u = 1;
+            triangles->verts[0].texCoords.v = 1;
+            triangles->verts[1].texCoords.u = 0;
+            triangles->verts[1].texCoords.v = 1;
+            triangles->verts[2].texCoords.u = 0;
+            triangles->verts[2].texCoords.v = 0;
+            triangles->verts[3].texCoords.u = 1;
+            triangles->verts[3].texCoords.v = 0;
+            
+        }
         
-        Texture2D *texture = skinMap.at(slotName)->getTexture();
-        attachmentVertices->_texture = texture;
+        if (slot->getAttachment()->getRTTI().isExactly(MeshAttachment::rtti)) {
+            MeshAttachment* attachment = (MeshAttachment*)slot->getAttachment();
+            AttachmentVertices* attachmentVertices = (AttachmentVertices*)attachment->getRendererObject();
+            
+            if (attachment->getColor().a == 0) {
+                _clipper->clipEnd(*slot);
+                return;
+            }
+            
+            Texture2D *texture = skinMap.at(slotName);
+            attachmentVertices->_texture = texture;
+                        
+            float minX = 1.0, maxX = 0.0, minY = 1.0, maxY = 0.0;
+            for (int i = 0; i < attachmentVertices->_triangles->vertCount; i++) {
+                TrianglesCommand::Triangles* triangles = attachmentVertices->_triangles;
+                if (triangles->verts[i].texCoords.u < minX) { minX = triangles->verts[i].texCoords.u; }
+                if (triangles->verts[i].texCoords.u > maxX) { maxX = triangles->verts[i].texCoords.u; }
+                if (triangles->verts[i].texCoords.v < minY) { minY = triangles->verts[i].texCoords.v; }
+                if (triangles->verts[i].texCoords.v > maxY) { maxY = triangles->verts[i].texCoords.v; }
+            }
+            
+            float lenx = maxX - minX;
+            float leny = maxY - minY;
+            for (int i = 0; i < attachmentVertices->_triangles->vertCount; i++) {
+                TrianglesCommand::Triangles* triangles = attachmentVertices->_triangles;
+                triangles->verts[i].texCoords.u -= minX;
+                triangles->verts[i].texCoords.u /= lenx;
+                triangles->verts[i].texCoords.v -= minY;
+                triangles->verts[i].texCoords.v /= leny;
+            }
+        }
+        
+        if (slot->getAttachment()->getRTTI().isExactly(ClippingAttachment::rtti)) {
+            printf("clipping渲染方法未实现\n");
+        }
     }
 }
 
-void MBSkeletonAnimation::setSkinFile(std::string slot, std::string file) {
-    skinMap.insert(slot, Sprite::create(file));
-}

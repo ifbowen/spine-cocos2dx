@@ -44,6 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param isLoop 是否循环
 - (void)setSpineAnimation:(NSString *)animation loop:(BOOL)isLoop;
 
+/// 局部换肤
+/// @param name 需要更换的名称
+/// @param file 文件
+- (void)setSpineLocalSkin:(NSString *)name file:(NSString *)file;
+
 /// 设置动画皮肤
 /// @param skin 皮肤
 - (void)setSpineSkinSurface:(NSString *)skin;

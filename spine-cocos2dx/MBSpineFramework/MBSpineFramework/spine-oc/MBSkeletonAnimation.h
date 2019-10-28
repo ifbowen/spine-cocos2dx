@@ -20,13 +20,11 @@ public:
     
     static MBSkeletonAnimation* createWithJsonFile (const std::string& skeletonJsonFile, const std::string& atlasFile, float scale = 1);
     virtual void draw (cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t transformFlags) override;
-    
-    void setSkinFile (std::string slot, std::string file);
-    
-    cocos2d::Map<std::string, cocos2d::Sprite*> skinMap;
+        
+    cocos2d::Map<std::string, cocos2d::Texture2D*> skinMap;
     
 private:
-    void replaceSkinImage (cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t transformFlags, cocos2d::BlendFunc blendFunc, Slot *slot);
+    void replaceSkinImage(Slot *slot);
     
 };
 

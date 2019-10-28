@@ -37,7 +37,7 @@
     [self.view addSubview:self.spineView];
     
     self.player = [[MBSpinePlayer alloc] init];
-    [self.player setSpineDebugEnable:YES];
+//    [self.player setSpineDebugEnable:YES];
     self.player.delegate = self;
     [self runSpine];
 }
@@ -62,6 +62,11 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"common" ofType:nil];
     [self.player setSpineName:@"spineboy" path:path];
     [self.player setSpineAnimation:@"walk" loop:self.isLoop];
+    [self.player setSpineLocalSkin:@"gun" file:[NSString stringWithFormat:@"%@/AK47.png", path]];
+    
+//    [self.player setSpineName:@"goblins" path:path];
+//    [self.player setSpineAnimation:@"walk" loop:self.isLoop];
+//    [self.player setSpineSkinSurface:@"goblin"];
     
     [self.player startAnimation];
 }

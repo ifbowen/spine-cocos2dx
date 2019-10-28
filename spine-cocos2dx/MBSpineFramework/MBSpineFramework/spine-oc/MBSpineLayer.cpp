@@ -38,6 +38,10 @@ void MBSpineLayer::onExit() {
     LayerColor::onExit();
 }
 
+void MBSpineLayer::setSkinFile(std::string slotName, std::string file) {
+    skinMap.insert(slotName, _director->getTextureCache()->addImage(file));
+}
+
 void MBSpineLayer::addAnimation() {
     
     std::string jsonPath = this->spinePath + "/" + std::string(this->spineName).append(".json");
@@ -59,6 +63,8 @@ void MBSpineLayer::addAnimation() {
     _skeletonAnimation->setAnimation(0, this->spineAnimation, this->loop);
     _skeletonAnimation->setPosition(Vec2(_contentSize.width / 2, 0));
     
+    _skeletonAnimation->skinMap = this->skinMap;
+
     if (!this->spineSkin.empty()) {
         _skeletonAnimation->setSkin(this->spineSkin);
     }
