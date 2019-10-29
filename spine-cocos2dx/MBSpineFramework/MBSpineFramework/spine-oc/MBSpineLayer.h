@@ -27,7 +27,6 @@ public:
     virtual ~MBSpineLayer();
     virtual bool init();
     void onExit();
-    
     void setSkinFile(std::string slotName, std::string file);
     
     std::string spineSkin;

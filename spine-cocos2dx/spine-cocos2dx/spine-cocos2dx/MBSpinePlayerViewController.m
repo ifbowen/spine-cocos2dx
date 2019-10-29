@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIView *spineView;
 @property (nonatomic, assign) BOOL dissAppear;
 @property (nonatomic, assign) BOOL isLoop;
+@property (nonatomic, assign) NSInteger count;
 
 @end
 
@@ -31,7 +32,8 @@
     white.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:white];
     
-    self.isLoop = YES;
+    self.isLoop = NO;
+    self.count = 0;
     
     self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.spineView];
@@ -60,14 +62,23 @@
 {
     [self.player setSpineDisplayView:self.spineView];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"common" ofType:nil];
-    [self.player setSpineName:@"spineboy" path:path];
-    [self.player setSpineAnimation:@"walk" loop:self.isLoop];
-    [self.player setSpineLocalSkin:@"gun" file:[NSString stringWithFormat:@"%@/AK47.png", path]];
     
-//    [self.player setSpineName:@"goblins" path:path];
-//    [self.player setSpineAnimation:@"walk" loop:self.isLoop];
-//    [self.player setSpineSkinSurface:@"goblin"];
+    if (self.count % 2 == 0) {
+            [self.player setSpineName:@"spineboy" path:path];
+            [self.player setSpineAnimation:@"walk" loop:self.isLoop];
+//            矩形渲染
+            [self.player setSpineLocalSkin:@"gun" file:[NSString stringWithFormat:@"%@/AK47.png", path]];
+    } else {
+            [self.player setSpineName:@"goblins" path:path];
+            [self.player setSpineAnimation:@"walk" loop:self.isLoop];
+            [self.player setSpineSkinSurface:@"goblin"];
+//             网格渲染
+            [self.player setSpineLocalSkin:@"head" file:[NSString stringWithFormat:@"%@/ahead.png", path]];
+            [self.player setSpineLocalSkin:@"eyes" file:[NSString stringWithFormat:@"%@/aempty.png", path]];
+    }
     
+    self.count++;
+
     [self.player startAnimation];
 }
 

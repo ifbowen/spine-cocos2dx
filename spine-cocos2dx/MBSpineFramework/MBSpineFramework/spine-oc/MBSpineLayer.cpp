@@ -46,7 +46,7 @@ void MBSpineLayer::addAnimation() {
     
     std::string jsonPath = this->spinePath + "/" + std::string(this->spineName).append(".json");
     std::string atlasPath = this->spinePath + "/" + std::string(this->spineName).append(".atlas");
-
+    
     _skeletonAnimation = MBSkeletonAnimation::createWithJsonFile(jsonPath, atlasPath, 0.5f);
     
     _skeletonAnimation->setStartListener([this] (TrackEntry* entry) {
