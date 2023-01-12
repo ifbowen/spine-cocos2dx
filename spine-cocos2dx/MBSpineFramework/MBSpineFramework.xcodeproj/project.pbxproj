@@ -357,7 +357,8 @@
 				4A4962D2235B4FED001338AB /* VertexAttachment.cpp */,
 				4A4962A5235B4FE9001338AB /* VertexEffect.cpp */,
 			);
-			path = spine;
+			name = spine;
+			path = "spine-cpp/src/spine";
 			sourceTree = "<group>";
 		};
 		4A49620A235B476E001338AB /* spine-oc */ = {
@@ -717,7 +718,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = ZW2AQ67NC5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

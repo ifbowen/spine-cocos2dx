@@ -149,8 +149,11 @@
 
 - (void)_start
 {
+    auto director = cocos2d::Director::getInstance();
+    if (director->getRunningScene()) {
+        return;
+    }
     static MBSpineAppDelegate s_sharedApplication;
-
     cocos2d::Application *app = cocos2d::Application::getInstance();
     app->initGLContextAttrs();
     
@@ -161,24 +164,21 @@
         [weakSelf setupSpineLayer:spineLayer];
     };
     
-    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [UIScreen mainScreen].bounds
-                                         pixelFormat: kEAGLColorFormatRGBA8
-                                         depthFormat: cocos2d::GLViewImpl::_depthFormat
-                                  preserveBackbuffer: NO
-                                          sharegroup: nil
-                                       multiSampling: NO
-                                     numberOfSamples: 0];
+    CCEAGLView *eaglView = [CCEAGLView viewWithFrame:[UIScreen mainScreen].bounds
+                                         pixelFormat:kEAGLColorFormatRGBA8
+                                         depthFormat:cocos2d::GLViewImpl::_depthFormat
+                                  preserveBackbuffer:NO
+                                          sharegroup:nil
+                                       multiSampling:NO
+                                     numberOfSamples:0];
     [eaglView setOpaque:NO];
     [eaglView setMultipleTouchEnabled:NO];
     [eaglView setBackgroundColor:UIColor.clearColor];
-    
     [self.contentView addSubview:eaglView];
     
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView((__bridge void*)eaglView);
-    auto director = cocos2d::Director::getInstance();
     director->setClearColor(cocos2d::Color4F(0, 0, 0, 0));
     director->setOpenGLView(glview);
-    
     if (self.debugEable) {
         director->setDisplayStats(true);
     }
@@ -188,12 +188,10 @@
 
 - (void)_stop
 {
-    cocos2d::Director::getInstance()->stopAnimation();
-    cocos2d::Director::getInstance()->end();
-    
-    // 清除缓存
-    cocos2d::Director::getInstance()->purgeCachedData();
-    
+    auto director = cocos2d::Director::getInstance();
+    director->stopAnimation();
+    director->end();
+    director->purgeCachedData();
     [self clearData];
 }
 

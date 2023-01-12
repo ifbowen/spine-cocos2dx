@@ -32,7 +32,7 @@
     white.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:white];
     
-    self.isLoop = NO;
+//    self.isLoop = YES;
     self.count = 0;
     
     self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -92,6 +92,7 @@
     if (!self.isLoop) {
         [self.player stopAnimation];
         __weak typeof(self) weakSelf = self;
+        // cocos 里面运行循环时间间隔 1 秒
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if ( weakSelf && !weakSelf.dissAppear) {
                 [weakSelf runSpine];
