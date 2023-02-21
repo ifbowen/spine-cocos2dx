@@ -75,6 +75,7 @@
 - (void)setSpineLocalSkin:(NSString *)name file:(NSString *)file
 {
     if (!name || !file) {
+        printf("MBSpinePlayer name or file is nil\n");
         return;
     }
     NSDictionary *skin = @{@"name": name, @"file": file};
@@ -94,9 +95,9 @@
 - (void)setupSpineLayer:(MBSpineLayer *)spineLayer
 {
     if (!self.spineName || !self.spinePath || !self.spineAniamtion) {
+        printf("MBSpinePlayer spineName or spinePath or spineAniamtion is nil\n");
         return;
     }
-    
     if (self.spineSkin) {
         spineLayer->spineSkin = std::string([self.spineSkin UTF8String]);
     }
@@ -110,34 +111,35 @@
     for (NSDictionary *skin in self.skins) {
         spineLayer->setSkinFile(std::string([skin[@"name"] UTF8String]), std::string([skin[@"file"] UTF8String]));
     }
-    
     spineLayer->startHandler = [self] (void) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidStart)]) {
             [self.delegate animationDidStart];
         }
     };
     spineLayer->completeHandler = [self] (void) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidComplete)]) {
-            [self.delegate animationDidComplete];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(animationDidCompletion)]) {
+            [self.delegate animationDidCompletion];
         }
     };
 }
 
-- (void)startAnimation
+- (BOOL)startAnimation
 {
     if (self.isRunning) {
-        return;
+        printf("MBSpinePlayer is running\n");
+        return NO;
     }
     printf("MBSpinePlayer startAnimation\n");
 
     self.isRunning = YES;
     
-    [self _start];
+    return [self _start];
 }
 
 - (void)stopAnimation
 {
     if (!self.isRunning) {
+        printf("MBSpinePlayer is not running\n");
         return;
     }
     printf("MBSpinePlayer stopAnimation\n");
@@ -147,11 +149,12 @@
     [self _stop];
 }
 
-- (void)_start
+- (BOOL)_start
 {
     auto director = cocos2d::Director::getInstance();
     if (director->getRunningScene()) {
-        return;
+        printf("MBSpinePlayer current running Scene is not completely destroyed. Please call later\n");
+        return NO;
     }
     static MBSpineAppDelegate s_sharedApplication;
     cocos2d::Application *app = cocos2d::Application::getInstance();
@@ -159,9 +162,8 @@
     
     MBSpineAppDelegate *delegate = (MBSpineAppDelegate *)app;
     
-    __weak typeof(self) weakSelf = self;
-    delegate->initFinishHandler = [weakSelf] (MBSpineLayer* spineLayer) {
-        [weakSelf setupSpineLayer:spineLayer];
+    delegate->initFinishHandler = [self] (MBSpineLayer* spineLayer) {
+        [self setupSpineLayer:spineLayer];
     };
     
     CCEAGLView *eaglView = [CCEAGLView viewWithFrame:[UIScreen mainScreen].bounds
@@ -184,6 +186,8 @@
     }
     
     app->run();
+    
+    return YES;
 }
 
 - (void)_stop
@@ -192,10 +196,10 @@
     director->stopAnimation();
     director->end();
     director->purgeCachedData();
-    [self clearData];
+    [self _clearData];
 }
 
-- (void)clearData
+- (void)_clearData
 {
     self.spineSkin = nil;
     self.spinePath = nil;

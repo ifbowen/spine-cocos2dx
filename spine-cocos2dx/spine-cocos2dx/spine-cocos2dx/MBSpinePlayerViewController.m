@@ -87,7 +87,7 @@
     
 }
 
-- (void)animationDidComplete
+- (void)animationDidCompletion
 {
     if (!self.isLoop) {
         [self.player stopAnimation];

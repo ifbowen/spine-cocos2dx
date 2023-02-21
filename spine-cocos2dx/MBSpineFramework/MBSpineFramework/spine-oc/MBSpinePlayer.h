@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)animationDidStart;
 
 /// 动画完成回调
-- (void)animationDidComplete;
+- (void)animationDidCompletion;
 
 @end
 
@@ -28,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MBSpinePlayer : NSObject
 
 @property (nonatomic, weak) id <MBSpinePlayerDelegate> delegate;
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)new NS_UNAVAILABLE;
 
 + (instancetype)player;
 
@@ -57,8 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param enable yes，开启；no，关闭
 - (void)setSpineDebugEnable:(BOOL)enable;
 
-/// 开始
-- (void)startAnimation;
+/// 开始，结束需要主动调用停止
+/// YES，成功；NO，失败
+- (BOOL)startAnimation;
 
 /// 停止
 - (void)stopAnimation;
